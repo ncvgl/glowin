@@ -1,0 +1,242 @@
+/* Slack-inspired theme */
+:root {
+  --slack-purple: #611f69;
+  --slack-purple-dark: #4a154b;
+  --slack-purple-light: #8b3a9b;
+  --slack-green: #2eb67d;
+  --slack-blue: #36c5f0;
+  --slack-yellow: #ecb22e;
+  --slack-red: #e01e5a;
+  --text-primary: #1d1c1d;
+  --text-secondary: #616061;
+  --background: #ffffff;
+  --border: #dddddd;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--slack-purple-dark);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.btn-primary {
+  background: var(--slack-purple);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--slack-purple-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--shadow);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--slack-purple);
+  border: 2px solid var(--slack-purple);
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 2rem;
+}
+
+.btn-secondary:hover {
+  background: var(--slack-purple);
+  color: white;
+}
+
+.profile-section {
+  text-align: center;
+  background: white;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px var(--shadow);
+  max-width: 500px;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 4px solid var(--slack-purple);
+}
+
+.profile-section h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.results-section {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.results-section h2 {
+  font-size: 2.5rem;
+  color: var(--slack-purple-dark);
+  margin-bottom: 0.5rem;
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.image-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.image-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  position: relative;
+  background: #f8f8f8;
+}
+
+.headshot-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.headshot-image:hover {
+  transform: scale(1.05);
+}
+
+.image-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+  color: var(--slack-red);
+}
+
+.image-error small {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.image-footer {
+  padding: 1.25rem;
+}
+
+.image-footer h3 {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.btn-download {
+  background: var(--slack-green);
+  color: white;
+  border: none;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.btn-download:hover {
+  background: #2a9768;
+  transform: translateY(-1px);
+}
+
+.error {
+  background: #ffebee;
+  color: var(--slack-red);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .images-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .results-section h2 {
+    font-size: 1.75rem;
+  }
+}
